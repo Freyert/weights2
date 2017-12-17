@@ -1,0 +1,19 @@
+@(exerciseSet: Form[CreateExerciseSetForm])(implicit request: MessagesRequestHeader)
+
+@import helper._
+
+@request.flash.get("success").map { key =>
+@request.messages(key)
+}
+
+@main("Welcome to Play") {
+@form(routes.ExerciseSetController.addExerciseSet()) {
+@inputText(exerciseSet("name"))
+@inputText(exerciseSet("date"))
+@CSRF.formField
+
+<div class="buttons">
+    <input type="submit" value="Add Person"/>
+</div>
+}
+}

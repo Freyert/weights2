@@ -1,0 +1,8 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.ExerciseSetController.index
+POST    /sets                     controllers.ExerciseSetController.addExerciseSet
+GET /sets controllers.ExerciseSetController.getExerciseSets
